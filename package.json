@@ -1,0 +1,13 @@
+{
+  "name": "vanilla-pjt-cat-image-search",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kimmihi/vanilla-pjt-cat-image-search.git",
+  "author": "kimmeh <mhko0411@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@babel/preset-env": "^7.19.1",
+    "http-server": "^14.1.1"
+  }
+}
