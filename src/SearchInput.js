@@ -1,4 +1,4 @@
-class SearchInput {
+export class SearchInput {
   text = "";
   constructor({ $target, onSearch }) {
     const searchBox = document.createElement("section");

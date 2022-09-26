@@ -1,4 +1,5 @@
-class App {
+import { SearchInput } from "./SearchInput.js";
+export class App {
   $target = null;
   data = [];
 
