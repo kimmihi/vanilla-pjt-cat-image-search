@@ -1,0 +1,18 @@
+.SearchBox {
+  width: 100%;
+  display: flex;
+}
+
+.SearchInput {
+  width: 800px;
+}
+
+.SubmitBtn {
+  width: 75px;
+  height: 56px;
+  background-color: green;
+  border: none;
+  color: #fff;
+  margin-left: 16px;
+  cursor: pointer;
+}

@@ -5,6 +5,9 @@
   "repository": "https://github.com/kimmihi/vanilla-pjt-cat-image-search.git",
   "author": "kimmeh <mhko0411@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "http-server . -c-1"
+  },
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@babel/preset-env": "^7.19.1",
