@@ -14,10 +14,10 @@ export class SearchInput {
     this.searchInput = searchInput;
     this.submitBtn = submitBtn;
 
-    searchBox.appendChild(searchInput);
-    searchBox.appendChild(submitBtn);
+    searchBox.appendChild(this.searchInput);
+    searchBox.appendChild(this.submitBtn);
 
-    $target.appendChild(searchBox);
+    $target.appendChild(this.searchBox);
 
     searchInput.addEventListener("keyup", (e) => {
       this.setState(e.target.value);
@@ -27,7 +27,7 @@ export class SearchInput {
       }
     });
 
-    submitBtn.addEventListener("click", (e) => {
+    submitBtn.addEventListener("click", () => {
       if (this.text.length === 0) return;
       onSearch(this.text);
     });

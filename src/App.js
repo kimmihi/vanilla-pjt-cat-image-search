@@ -1,4 +1,6 @@
-import { SearchInput } from "./SearchInput.js";
+import { SearchInput } from "./components/SearchInput.js";
+import { getCatImages } from "./api/api.js";
+
 export class App {
   $target = null;
   data = [];
