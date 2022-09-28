@@ -1,18 +1,42 @@
 .SearchBox {
   width: 100%;
   display: flex;
+  justify-content: center;
+  margin-top: 4rem;
 }
 
 .SearchInput {
   width: 800px;
+  font-size: 24px;
 }
 
 .SubmitBtn {
   width: 75px;
   height: 56px;
-  background-color: green;
+  background-color: #ff8000;
   border: none;
+  border-radius: 8px;
   color: #fff;
   margin-left: 16px;
   cursor: pointer;
+}
+
+.SubmitBtn:hover {
+  background-color: #ff9933;
+}
+
+.Result-Container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 4rem 1rem;
+}
+
+.Cat-Image {
+  width: 500px;
+  height: 500px;
+  background-color: #e6e6e6;
 }
