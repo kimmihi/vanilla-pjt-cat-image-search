@@ -1,7 +1,7 @@
 class SearchResult {
   constructor({ $target, catList }) {
-    const container = document.createElement("div");
-    container.className = "Result-Container";
+    const container = document.createElement("article");
+    container.className = "ResultContainer";
 
     this.target = $target;
     this.catList = catList;
@@ -37,7 +37,7 @@ class SearchResult {
     if (this.catList) {
       this.catList.forEach((cat) => {
         const image = document.createElement("img");
-        image.className = "Cat-Image";
+        image.className = "CatImage";
         image.setAttribute("data-src", cat.url);
 
         this.observer.observe(image);

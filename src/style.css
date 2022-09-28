@@ -1,5 +1,8 @@
+:root {
+  box-sizing: border-box;
+}
+
 .SearchBox {
-  width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 4rem;
@@ -25,18 +28,48 @@
   background-color: #ff9933;
 }
 
-.Result-Container {
-  display: flex;
+.ResultContainer {
+  display: grid;
   justify-content: center;
-  flex-wrap: wrap;
-  border: 1px solid #e6e6e6;
-  border-radius: 8px;
-  padding: 1rem;
-  margin: 4rem 1rem;
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  grid-gap: 2rem;
+  grid-auto-rows: 350px;
+  padding: 2rem;
 }
 
-.Cat-Image {
-  width: 500px;
-  height: 500px;
+.CatImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 0.3em;
   background-color: #e6e6e6;
+}
+
+@media (max-width: 992px) {
+  .ResultContainer {
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .ResultContainer {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+  }
+
+  .SearchInput {
+    width: 600px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ResultContainer {
+    grid-template-columns: repeat(1, minmax(250px, 1fr));
+  }
+
+  .SearchInput {
+    width: 300px;
+    font-size: 14px;
+  }
 }
