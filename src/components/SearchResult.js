@@ -34,6 +34,8 @@ class SearchResult {
   }
 
   render() {
+    this.container.innerHTML = "";
+
     if (this.catList) {
       this.catList.forEach((cat) => {
         const image = document.createElement("img");
