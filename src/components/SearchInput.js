@@ -8,6 +8,9 @@ export class SearchInput {
     searchBox.className = "SearchBox";
     searchInput.className = "SearchInput";
     submitBtn.className = "SubmitBtn";
+
+    searchInput.autofocus = true;
+    searchInput.placeholder = "고양이를 검색해보세요.";
     submitBtn.innerText = "검색";
 
     this.searchBox = searchBox;
@@ -25,6 +28,10 @@ export class SearchInput {
       if (e.key === "Enter") {
         onSearch(this.text);
       }
+    });
+
+    searchInput.addEventListener("focusin", (e) => {
+      e.target.value = "";
     });
 
     submitBtn.addEventListener("click", () => {
