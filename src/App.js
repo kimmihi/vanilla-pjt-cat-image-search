@@ -9,6 +9,9 @@ export class App {
   constructor($target) {
     this.$target = $target;
 
+    const divdier = document.createElement("hr");
+    divdier.className = "Divider";
+
     this.searchInput = new SearchInput({
       $target,
       onSearch: (keyword) => {
@@ -18,6 +21,8 @@ export class App {
         });
       },
     });
+
+    this.$target.appendChild(divdier);
 
     this.searchResult = new SearchResult({ $target, catList: this.catList });
   }
