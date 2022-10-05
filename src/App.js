@@ -1,7 +1,8 @@
 import { SearchInput } from "./components/SearchInput.js";
 import SearchResult from "./components/SearchResult.js";
+import DetailCatDialog from "./components/DetailCatDialog.js";
 import LoadingIndicator from "./components/LoadingIndicator.js";
-import { getCatImages } from "./api/api.js";
+import { getCatItem, getCatImages } from "./api/api.js";
 
 export class App {
   $target = null;
@@ -12,7 +13,10 @@ export class App {
 
     const divdier = document.createElement("hr");
     divdier.className = "Divider";
+
     this.loader = new LoadingIndicator($target);
+    this.detailCatDialog = new DetailCatDialog($target);
+
     this.searchInput = new SearchInput({
       $target,
       onSearch: (keyword) => {
@@ -36,7 +40,18 @@ export class App {
 
     this.$target.appendChild(divdier);
 
-    this.searchResult = new SearchResult({ $target, catList: this.catList });
+    this.searchResult = new SearchResult({
+      $target,
+      catList: this.catList,
+      onClick: async (catId) => {
+        try {
+          const { data } = await getCatItem(catId);
+          this.detailCatDialog.open(data);
+        } catch {
+          console.log("Error");
+        }
+      },
+    });
   }
 
   setState(newValue) {

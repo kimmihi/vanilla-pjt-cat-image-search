@@ -1,10 +1,11 @@
 class SearchResult {
-  constructor({ $target, catList }) {
+  constructor({ $target, catList, onClick }) {
     const container = document.createElement("article");
     container.className = "ResultContainer";
 
     this.target = $target;
     this.catList = catList;
+    this.onClick = onClick;
     this.container = container;
 
     this.target.appendChild(this.container);
@@ -42,6 +43,9 @@ class SearchResult {
         image.className = "CatImage";
         image.setAttribute("data-src", cat.url);
 
+        image.addEventListener("click", () => {
+          this.onClick(cat.id);
+        });
         this.observer.observe(image);
         frag.appendChild(image);
       });
