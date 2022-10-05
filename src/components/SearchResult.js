@@ -35,7 +35,7 @@ class SearchResult {
 
   render() {
     this.container.innerHTML = "";
-
+    const frag = document.createDocumentFragment();
     if (this.catList) {
       this.catList.forEach((cat) => {
         const image = document.createElement("img");
@@ -43,8 +43,9 @@ class SearchResult {
         image.setAttribute("data-src", cat.url);
 
         this.observer.observe(image);
-        this.container.appendChild(image);
+        frag.appendChild(image);
       });
+      this.container.appendChild(frag);
     }
   }
 }
