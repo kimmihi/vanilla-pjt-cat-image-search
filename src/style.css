@@ -28,6 +28,33 @@
   background-color: #ff9933;
 }
 
+.RecentKeywordContainer {
+  display: flex;
+  justify-content: left;
+  padding: 0 8rem;
+  margin-top: 1rem;
+}
+
+.RecentKeywordContainer .ButtonGroup {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+.RecentKeywordContainer .ButtonGroup button {
+  padding: 8px 24px;
+  border-radius: 8px;
+  border: 1px solid #ff9933;
+  background-color: #fff;
+  margin: 0px 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.RecentKeywordContainer .ButtonGroup button:hover {
+  background-color: #ffb366;
+  color: #fff;
+}
+
 .ResultContainer {
   display: grid;
   justify-content: center;
