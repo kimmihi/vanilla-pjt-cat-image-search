@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.SearchBox {
+.SearchBar {
   display: flex;
   justify-content: center;
   margin-top: 4rem;
@@ -59,6 +59,7 @@
 }
 
 .Dialog {
+  animation: fadein 1s forwards;
   width: 500px;
   height: 500px;
   box-shadow: 8px 8px 4px #808080;
@@ -82,7 +83,9 @@
   position: relative;
   width: 20em;
   height: 20em;
-  object-fit: scale-down;
+  object-fit: cover;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 .DialogCloseBtn {
@@ -146,5 +149,14 @@
   }
   to {
     transform: rotate(359deg);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

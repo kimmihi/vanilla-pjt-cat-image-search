@@ -1,14 +1,13 @@
 class SearchResult {
-  constructor({ $target, catList, onClick }) {
-    const container = document.createElement("article");
+  #catList = [];
+  constructor({ $target, onClick }) {
+    const container = document.createElement("section");
     container.className = "ResultContainer";
 
     this.target = $target;
-    this.catList = catList;
     this.onClick = onClick;
-    this.container = container;
 
-    this.target.appendChild(this.container);
+    this.target.appendChild(container);
 
     this.observer = new IntersectionObserver(
       (entries, observer) => {
@@ -26,19 +25,21 @@ class SearchResult {
       }
     );
 
-    this.render();
+    this.#render();
   }
 
   setState(newValue) {
-    this.catList = newValue;
-    this.render();
+    this.#catList = newValue;
+    this.#render();
   }
 
-  render() {
-    this.container.innerHTML = "";
+  #render() {
     const frag = document.createDocumentFragment();
-    if (this.catList) {
-      this.catList.forEach((cat) => {
+    const container = document.querySelector(".ResultContainer");
+    container.innerHTML = "";
+
+    if (this.#catList) {
+      this.#catList.forEach((cat) => {
         const image = document.createElement("img");
         image.className = "CatImage";
         image.setAttribute("data-src", cat.url);
@@ -46,10 +47,11 @@ class SearchResult {
         image.addEventListener("click", () => {
           this.onClick(cat.id);
         });
+
         this.observer.observe(image);
         frag.appendChild(image);
       });
-      this.container.appendChild(frag);
+      container.appendChild(frag);
     }
   }
 }

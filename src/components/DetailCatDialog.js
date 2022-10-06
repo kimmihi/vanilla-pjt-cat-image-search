@@ -1,13 +1,11 @@
-import { getCatItem } from "../api/api.js";
-
 class DetailCatDialog {
   cat = {};
   constructor($target) {
-    const dialogContainer = document.createElement("div");
+    const dialogContainer = document.createElement("section");
     const dialog = document.createElement("div");
     const dialogTitle = document.createElement("div");
     const dialogContent = document.createElement("div");
-    const catName = document.createElement("p");
+    const catName = document.createElement("h3");
     const catImage = document.createElement("img");
     const closeButton = document.createElement("button");
 
@@ -20,7 +18,6 @@ class DetailCatDialog {
     closeButton.className = "DialogCloseBtn";
 
     dialogContainer.style.display = "none";
-    catImage.style.width = "100%";
 
     closeButton.innerText = "X";
 
@@ -38,10 +35,6 @@ class DetailCatDialog {
     this.dialogContainer = dialogContainer;
     $target.appendChild(this.dialogContainer);
 
-    closeButton.addEventListener("click", () => {
-      this.close();
-    });
-
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         this.close();
@@ -55,6 +48,10 @@ class DetailCatDialog {
         this.close();
       }
     });
+
+    closeButton.addEventListener("click", () => {
+      this.close();
+    });
   }
 
   close() {
@@ -67,22 +64,12 @@ class DetailCatDialog {
     this.setState(cat);
   }
 
-  async request(catId) {
-    try {
-      const { data } = await getCatItem(catId);
-      this.setState(data);
-    } catch {
-      console.log("Error");
-    }
-  }
-
   setState(newCat) {
     this.cat = newCat;
-    console.log(newCat);
-    this.render(newCat);
+    this.#render(newCat);
   }
 
-  render(cat) {
+  #render(cat) {
     this.catName.innerText = cat.name;
     this.catImage.src = cat.url;
   }

@@ -19,22 +19,15 @@ export class App {
 
     this.searchInput = new SearchInput({
       $target,
-      onSearch: (keyword) => {
-        this.setState([]);
+      onSearch: async (keyword) => {
         this.loader.render();
-        getCatImages(keyword)
-          .then((res) => {
-            this.loader.hide();
-            const { data } = res;
-            if (data.length) {
-              this.setState(data);
-              return;
-            }
-            console.log("결과가없습니다.");
-          })
-          .catch((e) => {
-            console.log(e);
-          });
+        try {
+          const { data } = await getCatImages(keyword);
+          this.loader.hide();
+          this.searchResult.setState(data);
+        } catch {
+          this.loader.hide();
+        }
       },
     });
 
@@ -42,7 +35,6 @@ export class App {
 
     this.searchResult = new SearchResult({
       $target,
-      catList: this.catList,
       onClick: async (catId) => {
         try {
           const { data } = await getCatItem(catId);

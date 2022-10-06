@@ -1,11 +1,11 @@
 export class SearchInput {
-  text = "";
+  #text = "";
   constructor({ $target, onSearch }) {
-    const searchBox = document.createElement("section");
+    const searchBar = document.createElement("section");
     const searchInput = document.createElement("input");
     const submitBtn = document.createElement("button");
 
-    searchBox.className = "SearchBox";
+    searchBar.className = "SearchBar";
     searchInput.className = "SearchInput";
     submitBtn.className = "SubmitBtn";
 
@@ -13,20 +13,16 @@ export class SearchInput {
     searchInput.placeholder = "고양이를 검색해보세요.";
     submitBtn.innerText = "검색";
 
-    this.searchBox = searchBox;
-    this.searchInput = searchInput;
-    this.submitBtn = submitBtn;
+    searchBar.appendChild(searchInput);
+    searchBar.appendChild(submitBtn);
 
-    searchBox.appendChild(this.searchInput);
-    searchBox.appendChild(this.submitBtn);
-
-    $target.appendChild(this.searchBox);
+    $target.appendChild(searchBar);
 
     searchInput.addEventListener("keyup", (e) => {
       this.setState(e.target.value);
       if (e.isComposing) return;
       if (e.key === "Enter") {
-        onSearch(this.text);
+        onSearch(this.#text);
       }
     });
 
@@ -35,12 +31,12 @@ export class SearchInput {
     });
 
     submitBtn.addEventListener("click", () => {
-      if (this.text.length === 0) return;
-      onSearch(this.text);
+      if (this.#text.length === 0) return;
+      onSearch(this.#text);
     });
   }
 
   setState(newState) {
-    this.text = newState;
+    this.#text = newState;
   }
 }
