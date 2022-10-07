@@ -7,6 +7,7 @@ export class SearchInput {
     const submitBtn = document.createElement("button");
     const recentKeywordContainer = document.createElement("section");
 
+    this.searchInput = searchInput;
     this.$target = $target;
     this.onSearch = onSearch;
     this.recentKeywordContainer = recentKeywordContainer;
@@ -77,6 +78,7 @@ export class SearchInput {
       chip.innerText = keyword;
       chip.addEventListener("click", () => {
         this.onSearch(keyword);
+        this.searchInput.value = keyword;
       });
       frag.appendChild(chip);
     });
