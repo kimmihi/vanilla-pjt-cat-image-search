@@ -2,7 +2,7 @@ import { SearchInput } from "./components/SearchInput.js";
 import SearchResult from "./components/SearchResult.js";
 import DetailCatDialog from "./components/DetailCatDialog.js";
 import LoadingIndicator from "./components/LoadingIndicator.js";
-import { getCatItem, getCatImages } from "./api/api.js";
+import { getCatItem, getCatImages, getRandomCat } from "./api/api.js";
 
 export class App {
   $target = null;
@@ -23,6 +23,16 @@ export class App {
         this.loader.render();
         try {
           const { data } = await getCatImages(keyword);
+          this.loader.hide();
+          this.searchResult.setState(data);
+        } catch {
+          this.loader.hide();
+        }
+      },
+      onRandom: async () => {
+        this.loader.render();
+        try {
+          const { data } = await getRandomCat();
           this.loader.hide();
           this.searchResult.setState(data);
         } catch {

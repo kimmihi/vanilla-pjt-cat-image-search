@@ -1,10 +1,10 @@
 export class SearchInput {
   #text = "";
   #recentKeywordList = [];
-  constructor({ $target, onSearch }) {
+  constructor({ $target, onSearch, onRandom }) {
     const searchBar = document.createElement("section");
     const searchInput = document.createElement("input");
-    const submitBtn = document.createElement("button");
+    const randomBtn = document.createElement("button");
     const recentKeywordContainer = document.createElement("section");
 
     this.searchInput = searchInput;
@@ -14,15 +14,15 @@ export class SearchInput {
 
     searchBar.className = "SearchBar";
     searchInput.className = "SearchInput";
-    submitBtn.className = "SubmitBtn";
+    randomBtn.className = "RandomBtn";
     recentKeywordContainer.className = "RecentKeywordContainer";
 
     searchInput.autofocus = true;
     searchInput.placeholder = "고양이를 검색해보세요.";
-    submitBtn.innerText = "검색";
+    randomBtn.innerText = "Random";
 
     searchBar.appendChild(searchInput);
-    searchBar.appendChild(submitBtn);
+    searchBar.appendChild(randomBtn);
 
     $target.appendChild(searchBar);
     $target.appendChild(this.recentKeywordContainer);
@@ -40,10 +40,10 @@ export class SearchInput {
       e.target.value = "";
     });
 
-    submitBtn.addEventListener("click", () => {
-      if (this.#text.length === 0) return;
-      onSearch(this.#text);
-      this.#addRecentKeyword(this.#text);
+    randomBtn.addEventListener("click", () => {
+      onRandom();
+      this.searchInput.value = "";
+      this.setState("");
     });
   }
 

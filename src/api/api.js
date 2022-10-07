@@ -18,3 +18,11 @@ export const getCatImages = async (keyword) => {
 
   return data;
 };
+
+export const getRandomCat = async () => {
+  const responseData = await fetch(`${API_ENDPOINT}/api/cats/random50`);
+
+  const data = responseData.json();
+
+  return data;
+};
