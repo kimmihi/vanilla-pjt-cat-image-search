@@ -15,6 +15,12 @@
 
 **⌛︎ 3. 검색 페이지 관련**
 
-[**✅ 4. 스크롤 페이징 관련**](https://github.com/kimmihi/vanilla-pjt-cat-image-search/blob/main/docs/4-%EC%8A%A4%ED%81%AC%EB%A1%A4%20%ED%8E%98%EC%9D%B4%EC%A7%95.md)
+[**⌛︎ 4. 스크롤 페이징 관련**](https://github.com/kimmihi/vanilla-pjt-cat-image-search/blob/main/docs/4-%EC%8A%A4%ED%81%AC%EB%A1%A4%20%ED%8E%98%EC%9D%B4%EC%A7%95.md)
 
 **⌛︎ 5. 랜덤 고양이 배너 섹션 추가**
+
+---
+
+### Study
+
+- **Lazy Loading**
