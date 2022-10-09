@@ -23,4 +23,4 @@
 
 ### Study
 
-- **Lazy Loading**
+- [**Lazy Loading**](https://github.com/kimmihi/vanilla-pjt-cat-image-search/blob/main/docs/study/Lazy-Loading.md)
