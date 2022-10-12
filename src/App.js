@@ -2,6 +2,7 @@ import { SearchInput } from "./components/SearchInput.js";
 import SearchResult from "./components/SearchResult.js";
 import DetailCatDialog from "./components/DetailCatDialog.js";
 import LoadingIndicator from "./components/LoadingIndicator.js";
+import DarkModeToggle from "./components/DakrModeToggle.js";
 import { getCatItem, getCatImages, getRandomCat } from "./api/api.js";
 
 export class App {
@@ -14,6 +15,7 @@ export class App {
     const divdier = document.createElement("hr");
     divdier.className = "Divider";
 
+    new DarkModeToggle($target);
     this.loader = new LoadingIndicator($target);
     this.detailCatDialog = new DetailCatDialog($target);
 

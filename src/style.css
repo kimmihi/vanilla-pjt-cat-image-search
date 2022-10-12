@@ -1,5 +1,15 @@
 :root {
   box-sizing: border-box;
+  --color-dark: #262626;
+  --color-light: #e6e6e6;
+  --background-color: #e6e6e6;
+  --text-color: #262626;
+  --opacity: 1;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .SearchBar {
@@ -13,6 +23,12 @@
   font-size: 24px;
   border-radius: 8px;
   border: 1px solid #ff8000;
+
+  background-color: var(--background-color);
+}
+
+.SearchInput::placeholder {
+  color: var(--text-color);
 }
 
 .RandomBtn {
@@ -21,7 +37,7 @@
   background-color: #ff8000;
   border: none;
   border-radius: 8px;
-  color: #fff;
+  color: var(--text-color);
   margin-left: 16px;
   cursor: pointer;
 }
@@ -54,7 +70,7 @@
 
 .RecentKeywordContainer .ButtonGroup button:hover {
   background-color: #ffb366;
-  color: #fff;
+  color: var(--text-color);
 }
 
 .ResultContainer {
@@ -93,7 +109,7 @@
   height: 500px;
   box-shadow: 8px 8px 4px #808080;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: var(--background-color);
   padding: 8px;
 }
 
@@ -141,7 +157,7 @@
 
 .Divider {
   margin: 2rem 4rem;
-  border: 0.5px solid #e6e6e6;
+  border: 0.5px solid var(--text-color);
 }
 
 @media (max-width: 992px) {
@@ -188,4 +204,29 @@
   to {
     opacity: 1;
   }
+}
+
+/* 다크 모드 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: var(--color-dark);
+    --text-color: var(--color-light);
+  }
+}
+
+.dark-mode {
+  --background-color: var(--color-dark);
+  --text-color: var(--color-light);
+}
+
+.light-mode {
+  --background-color: var(--color-light);
+  --text-color: var(--color-dark);
+}
+
+.DarkModeBtn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: var(--background-color);
+  background-color: var(--text-color);
 }
