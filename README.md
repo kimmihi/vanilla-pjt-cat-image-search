@@ -9,7 +9,7 @@
 
 ### 🎯 요구사항
 
-**⌛︎ 1. HTML/CSS 관련**
+[**⌛︎ 1. HTML/CSS 관련**](https://github.com/kimmihi/vanilla-pjt-cat-image-search/blob/main/docs/1-HTML-CSS.md)
 
 **⌛︎ 2. 이미지 상세보기 모달 관련**
 

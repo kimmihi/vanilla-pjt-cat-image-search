@@ -4,7 +4,6 @@
   --color-light: #e6e6e6;
   --background-color: #e6e6e6;
   --text-color: #262626;
-  --opacity: 1;
 }
 
 body {
@@ -23,7 +22,7 @@ body {
   font-size: 24px;
   border-radius: 8px;
   border: 1px solid #ff8000;
-
+  color: var(--text-color);
   background-color: var(--background-color);
 }
 
@@ -62,7 +61,8 @@ body {
   padding: 8px 24px;
   border-radius: 8px;
   border: 1px solid #ff9933;
-  background-color: #fff;
+  color: var(--text-color);
+  background-color: var(--background-color);
   margin: 0px 8px;
   cursor: pointer;
   font-size: 16px;
