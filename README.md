@@ -13,7 +13,7 @@
 
 **⌛︎ 2. 이미지 상세보기 모달 관련**
 
-**⌛︎ 3. 검색 페이지 관련**
+[**⌛︎ 3. 검색 페이지 관련**](https://github.com/kimmihi/vanilla-pjt-cat-image-search/blob/main/docs/2-%EA%B2%80%EC%83%89%ED%8E%98%EC%9D%B4%EC%A7%80.md)
 
 [**⌛︎ 4. 스크롤 페이징 관련**](https://github.com/kimmihi/vanilla-pjt-cat-image-search/blob/main/docs/4-%EC%8A%A4%ED%81%AC%EB%A1%A4%20%ED%8E%98%EC%9D%B4%EC%A7%95.md)
 
